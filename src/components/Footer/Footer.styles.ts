@@ -1,7 +1,7 @@
-import { IStyles } from "../../models/Styles.models";
-import { FOOTER_HEIGHT } from "./constants/sizes/sizes";
+import { Styles } from "../../models";
+import { FOOTER_HEIGHT } from "./constants";
 
-const footerStyles: IStyles = {
+const footerStyles: Styles = {
   container: {
     height: ({ spacing }) => spacing(FOOTER_HEIGHT),
     width: "100%",

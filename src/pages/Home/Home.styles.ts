@@ -1,4 +1,4 @@
-import { IStyles } from "../../models/Styles.models";
+import { Styles } from "../../models/Styles.models";
 import { keyframes } from "@emotion/react";
 
 const imgKeyframe = keyframes`  
@@ -6,7 +6,7 @@ const imgKeyframe = keyframes`
     75% { transform: translateY(-16px)  rotate(-8deg)  }
 `;
 
-const homeStyles: IStyles = {
+const homeStyles: Styles = {
   container: {
     display: "flex",
     justifyContent: "center",
@@ -19,8 +19,8 @@ const homeStyles: IStyles = {
     animation: `${imgKeyframe} 4s infinite linear`,
   },
   message: {
-    color: "#FFFFFF",
-    textAlign: "center",
+    width: "80%",
+    fontSize: { xs: "28px", sm: "40px" },
   },
 };
 

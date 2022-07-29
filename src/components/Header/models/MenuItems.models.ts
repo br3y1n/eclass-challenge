@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
-interface IMenuItems {
+interface MenuItems {
   route: string;
   component: ReactNode;
 }
 
-export type { IMenuItems };
+export type { MenuItems };

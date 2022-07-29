@@ -1,8 +1,8 @@
 import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material";
 
-interface IStyles {
+interface Styles {
   [k: string]: SxProps<Theme>;
 }
 
-export type { IStyles };
+export type { Styles };

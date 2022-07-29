@@ -1,7 +1,7 @@
-import { IStyles } from "../../models/Styles.models";
-import { HEADER_HEIGHT } from "./constants/sizes/sizes";
+import { Styles } from "../../models";
+import { HEADER_HEIGHT } from "./constants";
 
-const headerStyles: IStyles = {
+const headerStyles: Styles = {
   container: {
     bgcolor: "rgba(0,0,0,0.6)",
     height: ({ spacing }) => spacing(HEADER_HEIGHT),

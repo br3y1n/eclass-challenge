@@ -12,7 +12,8 @@ const Home = () => {
         sx={homeStyles.img}
       />
       <Typography variant={"h1"} sx={homeStyles.message}>
-        Hi, I'm Brayan Arango and this is my eClass challenge.
+        Hi!, I'm Brayan Arango and this is my eClass challenge, for the React
+        Frontend vacancy.
       </Typography>
     </Box>
   );

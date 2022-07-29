@@ -1,11 +1,11 @@
-import { IStyles } from "./models/Styles.models";
-import { HEADER_HEIGHT } from "./components/Header/constants/sizes/sizes";
-import { FOOTER_HEIGHT } from "./components/Footer/constants/sizes/sizes";
+import { Styles } from "./models";
+import { HEADER_HEIGHT } from "./components/Header/constants";
+import { FOOTER_HEIGHT } from "./components/Footer/constants";
 
 const PADDING_SECTION_SM = 8;
 const PADDING_SECTION_XS = 2;
 
-const appStyles: IStyles = {
+const appStyles: Styles = {
   main: {
     height: ({ spacing }) => `calc(100% - ${spacing(HEADER_HEIGHT)})`,
     width: "100%",
