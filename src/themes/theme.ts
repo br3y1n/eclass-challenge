@@ -9,6 +9,12 @@ const theme = createTheme({
       main: "#0080ff",
     },
   },
+  typography: {
+    fontFamily: "Inter, sans-serif, Arial",
+    h1: {
+      fontSize: "40px",
+    },
+  },
 });
 
 export { theme };

@@ -13,11 +13,18 @@ const headerStyles: IStyles = {
   },
   menu: {
     height: ({ spacing }) => spacing(HEADER_HEIGHT),
-    px: 3,
+    px: {
+      xs: 1,
+      sm: 3,
+    },
     display: "flex",
     alignItems: "center",
     textDecoration: "none",
     color: "#b5b5b5",
+    fontSize: {
+      xs: "12px",
+      sm: "16px",
+    },
 
     "&.active": {
       borderBottom: "solid 1px #FFFFFF",
@@ -28,7 +35,10 @@ const headerStyles: IStyles = {
     },
 
     "& img": {
-      height: "50%",
+      height: {
+        xs: "30%",
+        sm: "50%",
+      },
     },
   },
 };

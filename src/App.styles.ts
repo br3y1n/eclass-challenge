@@ -2,15 +2,31 @@ import { IStyles } from "./models/Styles.models";
 import { HEADER_HEIGHT } from "./components/Header/constants/sizes/sizes";
 import { FOOTER_HEIGHT } from "./components/Footer/constants/sizes/sizes";
 
+const PADDING_SECTION_SM = 8;
+const PADDING_SECTION_XS = 2;
+
 const appStyles: IStyles = {
   main: {
     height: ({ spacing }) => `calc(100% - ${spacing(HEADER_HEIGHT)})`,
     width: "100%",
+    overflowY: "auto",
   },
   section: {
-    height: ({ spacing }) => `calc(100% - ${spacing(FOOTER_HEIGHT)})`,
-    width: "100%",
-    overflowY: "auto",
+    minHeight: ({ spacing }) => ({
+      xs: `calc(100% - ${spacing(FOOTER_HEIGHT + PADDING_SECTION_XS * 2)})`,
+      sm: `calc(100% - ${spacing(FOOTER_HEIGHT + PADDING_SECTION_SM * 2)})`,
+    }),
+    width: ({ spacing }) => ({
+      xs: `calc(100% - ${spacing(PADDING_SECTION_XS * 2)})`,
+      sm: `calc(100% - ${spacing(PADDING_SECTION_SM * 2)})`,
+    }),
+    maxWidth: ({
+      breakpoints: {
+        values: { md },
+      },
+    }) => md,
+    mx: "auto",
+    p: { xs: PADDING_SECTION_XS, sm: PADDING_SECTION_SM },
   },
 };
 
