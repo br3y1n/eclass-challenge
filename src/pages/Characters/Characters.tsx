@@ -1,12 +1,12 @@
 import { gql, useQuery } from "@apollo/client";
 import { ChangeEvent, useState } from "react";
-import { Pagination, Typography } from "@mui/material";
+import { Pagination, TextField, Typography } from "@mui/material";
 import { charactersStyles } from "./Characters.styles";
 import MediaCards from "../../components/MediaCards/MediaCards";
 
 const FILMS_QUERY = gql`
-  query Characters($page: Int) {
-    characters(page: $page) {
+  query Characters($page: Int, $name: String) {
+    characters(page: $page, filter: { name: $name }) {
       info {
         pages
       }
@@ -21,36 +21,58 @@ const FILMS_QUERY = gql`
 
 const Characters = () => {
   const [page, setPage] = useState(1);
+  const [name, setName] = useState("");
 
-  const { data, loading, error } = useQuery(FILMS_QUERY, {
-    variables: { page },
+  const { data, loading } = useQuery(FILMS_QUERY, {
+    variables: { page, name },
   });
+
+  const cards = data?.characters?.results;
 
   const handleChange = (_: ChangeEvent<unknown>, page: number) => {
     setPage(page);
   };
 
+  const handleChangeInput = ({
+    target: { value },
+  }: ChangeEvent<HTMLInputElement>) => {
+    setName(value);
+  };
+
   return (
-    <div>
+    <>
       <Typography variant={"h1"}>Characters</Typography>
 
+      <TextField
+        variant="outlined"
+        label="name"
+        placeholder="Filter by name"
+        sx={charactersStyles.input}
+        value={name}
+        onChange={handleChangeInput}
+      />
+
       {loading ? (
-        <Typography>Loading...</Typography>
+        <Typography variant={"body1"} sx={charactersStyles.pagination}>
+          Loading...
+        </Typography>
       ) : (
         <>
-          <MediaCards cards={data.characters.results} />
+          <MediaCards cards={cards} />
 
-          <Pagination
-            sx={charactersStyles.pagination}
-            variant="outlined"
-            page={page}
-            count={data.characters.info.pages}
-            color="secondary"
-            onChange={handleChange}
-          />
+          {cards.length > 0 && (
+            <Pagination
+              sx={charactersStyles.pagination}
+              variant="outlined"
+              page={page}
+              count={data.characters.info.pages}
+              color="secondary"
+              onChange={handleChange}
+            />
+          )}
         </>
       )}
-    </div>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ const mediaCardStyles: Styles = {
     fontSize: "14px",
     p: 0,
 
-    "&:first-child": {
+    "&:first-of-type": {
       mr: 3,
     },
   },

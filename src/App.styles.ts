@@ -27,6 +27,7 @@ const appStyles: Styles = {
     }) => md,
     mx: "auto",
     p: { xs: PADDING_SECTION_XS, sm: PADDING_SECTION_SM },
+    textAlign: "center",
   },
 };
 
