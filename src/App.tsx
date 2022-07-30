@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { appStyles } from "./App.styles";
 import { Characters, Details, Extra, Favorites, Home, Rules } from "./pages";
-import { RoutesEnum } from "./enums/routes.enums";
+import { RoutesEnum } from "./enums";
 
 const App = () => (
   <BrowserRouter>
@@ -18,7 +18,7 @@ const App = () => (
           <Route path={RoutesEnum.FAVORITES} element={<Favorites />} />
           <Route path={RoutesEnum.RULES} element={<Rules />} />
           <Route path={RoutesEnum.EXTRA} element={<Extra />} />
-          <Route path={RoutesEnum.DETAILS} element={<Details />} />
+          <Route path={`${RoutesEnum.DETAILS}/:id`} element={<Details />} />
           <Route path={"*"} element={<Navigate to={RoutesEnum.HOME} />} />
         </Routes>
       </Box>

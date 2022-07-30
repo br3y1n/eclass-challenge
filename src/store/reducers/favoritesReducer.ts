@@ -9,8 +9,11 @@ const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
-    updateFavorites: (state, { payload }) => {
-      state.characters = payload;
+    removeFromFavorites: (state, { payload }) => {
+      state.characters = state.characters.filter(({ id }) => id !== payload.id);
+    },
+    addToFavorites: (state, { payload }) => {
+      state.characters.push(payload);
     },
   },
 });

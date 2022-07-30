@@ -1,6 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 import { ChangeEvent, useState } from "react";
 import { Pagination, Typography } from "@mui/material";
+import { charactersStyles } from "./Characters.styles";
+import MediaCards from "../../components/MediaCards/MediaCards";
 
 const FILMS_QUERY = gql`
   query Characters($page: Int) {
@@ -36,20 +38,11 @@ const Characters = () => {
         <Typography>Loading...</Typography>
       ) : (
         <>
-          {data.characters.results.map(
-            ({
-              name,
-              image,
-              id,
-            }: {
-              name: string;
-              image: string;
-              id: number;
-            }) => (
-              <img src={image} alt={name} />
-            )
-          )}
+          <MediaCards cards={data.characters.results} />
+
           <Pagination
+            sx={charactersStyles.pagination}
+            variant="outlined"
             page={page}
             count={data.characters.info.pages}
             color="secondary"

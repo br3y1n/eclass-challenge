@@ -1,7 +1,7 @@
 interface Character {
   id: string;
   name: string;
-  img: string;
+  image: string;
 }
 
 export type { Character };

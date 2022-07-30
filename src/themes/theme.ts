@@ -33,6 +33,11 @@ const theme = createTheme({
       fontSize: "20px",
       textAlign: "justify",
     },
+    body2: {
+      color: "#b5b5b5",
+      fontSize: "18px",
+      textAlign: "justify",
+    },
   },
 });
 

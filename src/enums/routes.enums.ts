@@ -3,7 +3,7 @@ enum RoutesEnum {
   CHARACTERS = "/characters",
   FAVORITES = "/favorites",
   EXTRA = "/extra",
-  DETAILS = "/details/:id",
+  DETAILS = "/details",
   RULES = "/rules",
 }
 

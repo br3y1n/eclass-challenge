@@ -1,3 +1,3 @@
 import { favoritesSlice } from "../reducers/favoritesReducer";
 
-export const { updateFavorites } = favoritesSlice.actions;
+export const { addToFavorites, removeFromFavorites } = favoritesSlice.actions;
