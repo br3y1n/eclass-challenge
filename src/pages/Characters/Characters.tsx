@@ -4,7 +4,7 @@ import { Pagination, TextField, Typography } from "@mui/material";
 import { charactersStyles } from "./Characters.styles";
 import MediaCards from "../../components/MediaCards/MediaCards";
 
-const FILMS_QUERY = gql`
+const CHARACTERS_QUERY = gql`
   query Characters($page: Int, $name: String) {
     characters(page: $page, filter: { name: $name }) {
       info {
@@ -23,7 +23,7 @@ const Characters = () => {
   const [page, setPage] = useState(1);
   const [name, setName] = useState("");
 
-  const { data, loading } = useQuery(FILMS_QUERY, {
+  const { data, loading } = useQuery(CHARACTERS_QUERY, {
     variables: { page, name },
   });
 

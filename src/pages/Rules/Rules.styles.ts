@@ -16,6 +16,7 @@ const rulesStyles: Styles = {
   },
   code: {
     mb: 2,
+    textAlign: "left",
   },
 };
 
