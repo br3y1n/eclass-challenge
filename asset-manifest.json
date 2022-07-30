@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/eclass-challenge/static/css/main.0fdcccee.css",
+    "main.js": "/eclass-challenge/static/js/main.569ebd4a.js",
+    "static/media/rick-and-morty.png": "/eclass-challenge/static/media/rick-and-morty.28661e7a2a2e30cef008.png",
+    "static/media/eclass-logo.svg": "/eclass-challenge/static/media/eclass-logo.c95f7231c6cd40885a674c944357a017.svg",
+    "index.html": "/eclass-challenge/index.html",
+    "main.0fdcccee.css.map": "/eclass-challenge/static/css/main.0fdcccee.css.map",
+    "main.569ebd4a.js.map": "/eclass-challenge/static/js/main.569ebd4a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fdcccee.css",
+    "static/js/main.569ebd4a.js"
+  ]
+}
