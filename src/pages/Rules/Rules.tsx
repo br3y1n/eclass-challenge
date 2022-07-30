@@ -2,13 +2,11 @@ import { Link, styled, Typography } from "@mui/material";
 import { rulesStyles } from "./Rules.styles";
 import { ApisEnum } from "../../enums";
 import { EVALUATION_CRITERIA, GUIDELINE, STEPS } from "./constants";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierPlateauDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { CODE_STRING } from "./constants/codeString";
+import PreviewCode from "../../components/PreviewCode/PreviewCode";
 
 const Ul = styled("ul")();
 const Li = styled("li")();
-const NewSyntaxHighlighter = styled(SyntaxHighlighter)();
 
 const Rules = () => (
   <>
@@ -63,13 +61,7 @@ const Rules = () => (
       on a property using a {"<ul>"} list, Example:
     </Typography>
 
-    <NewSyntaxHighlighter
-      sx={rulesStyles.code}
-      language="javascript"
-      style={atelierPlateauDark}
-    >
-      {CODE_STRING}
-    </NewSyntaxHighlighter>
+    <PreviewCode code={CODE_STRING} />
 
     <Typography variant="h2">The guideline</Typography>
 

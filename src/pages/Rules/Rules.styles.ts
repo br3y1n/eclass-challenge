@@ -11,10 +11,6 @@ const rulesStyles: Styles = {
     pl: 4,
     pb: 2,
   },
-  code: {
-    mb: 2,
-    textAlign: "left",
-  },
 };
 
 export { rulesStyles };
