@@ -11,9 +11,11 @@ const Li = styled("li")();
 const Rules = () => (
   <>
     <Typography variant="h1">Rules</Typography>
+
     <Typography variant="body1" sx={rulesStyles.description}>
       Hello!
     </Typography>
+
     <Typography variant="body1" sx={rulesStyles.description}>
       Continuing with the process, the test to go to the next stage consists of
       making a search engine for characters from the Rick and Morty series
@@ -32,14 +34,16 @@ const Rules = () => (
       ))}
     </Ul>
 
-    <Typography variant="h2">Bonus exercise</Typography>
+    <Typography variant="h2" sx={rulesStyles.h2}>Bonus exercise</Typography>
 
     <Typography variant="body1" sx={rulesStyles.description}>
       We also need you to solve these little exercises, it shouldn't take more
       than 15min.
     </Typography>
 
-    <Typography variant="h3">Exercise 1.</Typography>
+    <Typography variant="h3" sx={rulesStyles.h3}>
+      Exercise 1.
+    </Typography>
 
     <Typography variant="body1" sx={rulesStyles.description}>
       Write a function that receives an array of numerics as a parameter, and
@@ -53,7 +57,9 @@ const Rules = () => (
       [1,2,3] )( result ={"> "} console.log(result) )
     </Typography>
 
-    <Typography variant="h3">Exercise 2.</Typography>
+    <Typography variant="h3" sx={rulesStyles.h3}>
+      Exercise 2.
+    </Typography>
 
     <Typography variant="body1" sx={rulesStyles.description}>
       Write a React component called ListNicknames that accepts a list of names
@@ -63,7 +69,7 @@ const Rules = () => (
 
     <PreviewCode code={CODE_STRING} />
 
-    <Typography variant="h2">The guideline</Typography>
+    <Typography variant="h2" sx={rulesStyles.h2}>The guideline</Typography>
 
     <Ul sx={rulesStyles.ul}>
       {GUIDELINE.map((text, index) => (
@@ -73,7 +79,7 @@ const Rules = () => (
       ))}
     </Ul>
 
-    <Typography variant="h2">The evaluation criteria will be</Typography>
+    <Typography variant="h2" sx={rulesStyles.h2}>The evaluation criteria will be</Typography>
 
     <Ul sx={rulesStyles.ul}>
       {EVALUATION_CRITERIA.map((text, index) => (

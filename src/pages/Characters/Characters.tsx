@@ -47,7 +47,6 @@ const Characters = () => {
         variant="outlined"
         label="name"
         placeholder="Filter by name"
-        sx={charactersStyles.input}
         value={name}
         onChange={handleChangeInput}
       />

@@ -4,3 +4,4 @@ export * from "./Store.models";
 export * from "./GetSumRef.models";
 export * from "./SortCallback.models";
 export * from "./ChangeStringTargets.models";
+export * from "./mapStringCallback.models";

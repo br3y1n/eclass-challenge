@@ -7,7 +7,7 @@ import { Characters, Details, Extra, Favorites, Home, Rules } from "./pages";
 import { RoutesEnum } from "./enums";
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Header />
 
     <Box component="main" sx={appStyles.main}>

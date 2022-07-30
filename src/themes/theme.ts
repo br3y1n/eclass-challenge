@@ -17,6 +17,67 @@ const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          margin: "16px",
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        select: {
+          color: "#b5b5b5",
+        },
+        icon: {
+          color: "#b5b5b5",
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          color: "#b5b5b5",
+        },
+        notchedOutline: {
+          borderColor: "#b5b5b5 !important",
+        },
+      },
+    },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          margin: "16px",
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          "&.Mui-focused": {
+            color: "#b5b5b5",
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: "rgba(255, 255, 255, 0.2)",
+          },
+        },
+      },
+    },
   },
   typography: {
     fontFamily: "Inter, sans-serif, Arial",

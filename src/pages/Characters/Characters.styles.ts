@@ -16,25 +16,7 @@ const charactersStyles: Styles = {
   },
   loading: {
     textAlign: "center",
-  },
-  input: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    my: 2,
-
-    "& input": {
-      color: "#b5b5b5",
-    },
-    "& fieldset": {
-      borderColor: "#b5b5b5 !important",
-    },
-    "& label": {
-      color: "#b5b5b5",
-
-      "&.Mui-focused": {
-        color: "#b5b5b5",
-      },
-    },
-  },
+  }
 };
 
 export { charactersStyles };
