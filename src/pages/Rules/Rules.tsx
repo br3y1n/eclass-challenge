@@ -1,17 +1,14 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Link, styled, Typography } from "@mui/material";
 import { rulesStyles } from "./Rules.styles";
 import { ApisEnum } from "../../enums";
 import { EVALUATION_CRITERIA, GUIDELINE, STEPS } from "./constants";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierPlateauDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { CODE_STRING } from "./constants/codeString";
 
 const Ul = styled("ul")();
 const Li = styled("li")();
 const NewSyntaxHighlighter = styled(SyntaxHighlighter)();
-const codeString = `<ListNicknames 
-    names={["Triviño TI", "Homer Dev", " ", " Ragnar Front", "Loki UX"]}
-    order="ASC"
-/>`;
 
 const Rules = () => (
   <>
@@ -23,18 +20,9 @@ const Rules = () => (
       Continuing with the process, the test to go to the next stage consists of
       making a search engine for characters from the Rick and Morty series
       through this
-      <Box
-        sx={rulesStyles.link}
-        component={({ className }) => (
-          <a
-            className={className}
-            href={ApisEnum.RICK_AND_MORTY}
-            target="_blank"
-          >
-            {" GraphQl API"}
-          </a>
-        )}
-      />
+      <Link href={ApisEnum.RICK_AND_MORTY} target="_blank">
+        {" GraphQl API"}
+      </Link>
       , specifically we want you to develop the following characteristics:
     </Typography>
 
@@ -75,8 +63,12 @@ const Rules = () => (
       on a property using a {"<ul>"} list, Example:
     </Typography>
 
-    <NewSyntaxHighlighter sx={rulesStyles.code} language="javascript" style={atelierPlateauDark}>
-      {codeString}
+    <NewSyntaxHighlighter
+      sx={rulesStyles.code}
+      language="javascript"
+      style={atelierPlateauDark}
+    >
+      {CODE_STRING}
     </NewSyntaxHighlighter>
 
     <Typography variant="h2">The guideline</Typography>

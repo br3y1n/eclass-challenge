@@ -9,6 +9,15 @@ const theme = createTheme({
       main: "#0080ff",
     },
   },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "#0080ff",
+        },
+      },
+    },
+  },
   typography: {
     fontFamily: "Inter, sans-serif, Arial",
     h1: {

@@ -4,9 +4,6 @@ const rulesStyles: Styles = {
   description: {
     pb: 2,
   },
-  link: {
-    color: "secondary.main",
-  },
   li: {
     typography: "body1",
   },
