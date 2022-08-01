@@ -15,4 +15,4 @@ interface UseImplementationTwoStateResponse {
 
 type UseImplementationTwoState = () => UseImplementationTwoStateResponse;
 
-export type { UseImplementationTwoState };
+export type { UseImplementationTwoState, UseImplementationTwoStateResponse };

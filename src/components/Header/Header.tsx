@@ -1,26 +1,15 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Box, IconButton, styled } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { headerStyles } from "./Header.styles";
-import { getMenuItems } from "../../utils/getMenuItems/getMenuItems";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useAppState } from "../../hooks/useAppState";
+import { useHeaderState } from "./hooks/useHeaderState";
 
 const NewLink = styled(Link)({});
 
 const Header: FC = () => {
-  const { pathname } = useLocation();
-  const [showMenu, setShowMenu] = useState(false);
-  const { isMobile } = useAppState();
-  const items = getMenuItems(isMobile);
-
-  const closeMenu = () => {
-    setShowMenu(false);
-  };
-
-  const toggleMenu = () => {
-    setShowMenu((prevState) => !prevState);
-  };
+  const { showMenu, items, pathname, closeMenu, toggleMenu, isMobile } =
+    useHeaderState();
 
   return (
     <Box

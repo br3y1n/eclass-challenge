@@ -7,19 +7,19 @@ describe("App test:", () => {
     (useMediaQuery as jest.Mock).mockReturnValue(false);
   });
 
-  it("When app is called, then Welcome message is render", () => {
+  it("When app is called, then Welcome message is rendered", () => {
     render(<App />);
     const welcomeMessage = screen.getByText(/Hi!, I'm Brayan Arango/i);
     expect(welcomeMessage).toBeInTheDocument();
   });
 
-  it("When app is called, then rick and morty img is render", () => {
+  it("When app is called, then rick and morty img is rendered", () => {
     render(<App />);
     const img = screen.getByAltText("Rick and Morty");
     expect(img).toBeInTheDocument();
   });
 
-  it("When app is called, then menus is render", () => {
+  it("When app is called, then menus is rendered", () => {
     render(<App />);
     const img = screen.getByAltText("eClass Logo");
     const rulesOption = screen.getByText(/RULES/i);
@@ -34,7 +34,7 @@ describe("App test:", () => {
     expect(img).toBeInTheDocument();
   });
 
-  it("When app is called, then footer is render", () => {
+  it("When app is called, then footer is rendered", () => {
     render(<App />);
     const footer = screen.getByText(/by BreYin/i);
 

@@ -13,25 +13,11 @@ import { Character } from "../../models";
 import { Link } from "react-router-dom";
 import { RoutesEnum } from "../../enums";
 import { mediaCardStyles } from "./MediaCard.styles";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useDispatch, useSelector } from "react-redux";
-import { selectFavorites } from "../../store/selectors/selectors";
-import {
-  addToFavorites,
-  removeFromFavorites,
-} from "../../store/actions/actions";
+import { useMediaCardState } from "./hooks/useMediaCardState";
 
 const MediaCard: FC<Character> = (props) => {
   const { image, name, id } = props;
-  const favorites = useSelector(selectFavorites);
-  const isFavorite =
-    favorites.find(({ id: currentId }) => id === currentId) !== undefined;
-  const dispatch = useDispatch();
-
-  const toggleFavorite = () => {
-    dispatch(isFavorite ? removeFromFavorites(props) : addToFavorites(props));
-  };
+  const { toggleFavorite, icon } = useMediaCardState(props);
 
   return (
     <Card sx={mediaCardStyles.container}>
@@ -52,7 +38,7 @@ const MediaCard: FC<Character> = (props) => {
 
           <CardActions>
             <IconButton sx={mediaCardStyles.button} onClick={toggleFavorite}>
-              {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+              {icon}
             </IconButton>
 
             <Button

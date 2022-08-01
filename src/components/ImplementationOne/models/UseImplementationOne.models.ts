@@ -8,4 +8,4 @@ interface UseImplementationOneStateResponse {
 
 type UseImplementationOneState = () => UseImplementationOneStateResponse;
 
-export type { UseImplementationOneState };
+export type { UseImplementationOneState, UseImplementationOneStateResponse };

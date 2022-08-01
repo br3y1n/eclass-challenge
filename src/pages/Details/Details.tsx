@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 import {
   styled,
   Table,
@@ -7,41 +7,27 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { useQuery } from "@apollo/client";
-import { charactersStyles } from "../Characters/Characters.styles";
-import { Character } from "../../models";
-import { OmitKeysEnum } from "./enums";
 import { detailsStyles } from "./Details.styles";
-import { CHARACTER_QUERY } from "./constants";
+import { useDetailsState } from "./hooks/useDetailsState";
 
 const Img = styled("img")({});
 
 const Details = () => {
-  const { id } = useParams();
-
-  const { data, loading } = useQuery<{ character: Character }>(
-    CHARACTER_QUERY,
-    {
-      variables: { id },
-    }
-  );
-
-  const character = data?.character;
-  const characterMapped = Object.entries(character ?? {}).filter(
-    ([key]) => !Object.values(OmitKeysEnum).includes(key as OmitKeysEnum)
-  );
+  const { loading, character, characterMapped } = useDetailsState();
 
   return (
     <>
       <Typography variant={"h1"}>Details</Typography>
 
       {loading ? (
-        <Typography variant={"body1"} sx={charactersStyles.pagination}>
-          Loading...
-        </Typography>
+        <Loading />
       ) : (
         <>
-          <Img src={character!.image} sx={detailsStyles.img} />
+          <Img
+            src={character!.image}
+            sx={detailsStyles.img}
+            alt={character!.name}
+          />
 
           <Table sx={detailsStyles.table}>
             <TableBody>

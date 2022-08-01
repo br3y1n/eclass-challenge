@@ -2,7 +2,7 @@ import { UseImplementationTwoState } from "../models";
 import { ChangeEvent, useEffect, useState } from "react";
 import { changeStringTargets } from "../../../utils/changeStringTargets/changeStringTargets";
 import { OrderEnum, StringTargetsEnum, YesOrNoEnum } from "../../../enums";
-import { CODE_LIST_NICKNAMES_STRING } from "../../../pages/Extra/constants/codeListNicknames";
+import { CODE_LIST_NICKNAMES_STRING } from "../constants";
 import { SelectChangeEvent } from "@mui/material";
 import { MAP_STRING_REF_BY } from "../../../constants";
 

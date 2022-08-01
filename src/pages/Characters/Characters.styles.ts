@@ -14,9 +14,6 @@ const charactersStyles: Styles = {
       border: "1px solid rgba(0, 0, 0, 0.6)",
     },
   },
-  loading: {
-    textAlign: "center",
-  }
 };
 
 export { charactersStyles };

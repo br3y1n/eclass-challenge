@@ -1,5 +1,5 @@
-import { MenuItems } from "../components/Header/models";
+import { MenuItem } from "../components/Header/models";
 
-type GetMenuItems = (isMobile: boolean) => MenuItems[];
+type GetMenuItems = (isMobile: boolean) => MenuItem[];
 
 export type { GetMenuItems };

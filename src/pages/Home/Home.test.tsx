@@ -6,12 +6,12 @@ describe("Home tests:", () => {
     render(<Home />);
   });
 
-  it("When Home is called, then Welcome message is render", () => {
+  it("When Home is called, then Welcome message is rendered", () => {
     const welcomeMessage = screen.getByText(/Hi!, I'm Brayan Arango/i);
     expect(welcomeMessage).toBeInTheDocument();
   });
 
-  it("When Home is called, then rick and morty img is render", () => {
+  it("When Home is called, then rick and morty img is rendered", () => {
     const img = screen.getByAltText("Rick and Morty");
     expect(img).toBeInTheDocument();
   });

@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement } from "react";
 import type { RenderOptions } from "@testing-library/react";
-import { render } from "@testing-library/react";
+import { render, renderHook } from "@testing-library/react";
 import type { PreloadedState } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
@@ -40,4 +40,30 @@ const renderWithProviders = (
   };
 };
 
-export { renderWithProviders };
+const renderHookWithProviders = <T,>(
+  render: (initialProps: unknown) => T,
+  {
+    preloadedState = { favorites: { characters: [] } },
+    store = configureStore({
+      reducer: {
+        favorites: favoritesReducer,
+      },
+      preloadedState,
+    }),
+  }: ExtendedRenderOptions = {}
+) => {
+  const Wrapper = ({ children }: PropsWithChildren<{}>): JSX.Element => (
+    <Provider store={store}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        {children}
+      </BrowserRouter>
+    </Provider>
+  );
+
+  return {
+    store,
+    ...renderHook(render, { wrapper: Wrapper }),
+  };
+};
+
+export { renderWithProviders, renderHookWithProviders };

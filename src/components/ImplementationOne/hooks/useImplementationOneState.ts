@@ -2,7 +2,7 @@ import { UseImplementationOneState } from "../models";
 import { ChangeEvent, useEffect, useState } from "react";
 import { getSumRef } from "../../../utils";
 import { changeStringTargets } from "../../../utils/changeStringTargets/changeStringTargets";
-import { CODE_SUM_STRING } from "../../../pages/Extra/constants";
+import { CODE_SUM_STRING } from "../constants";
 import { StringTargetsEnum } from "../../../enums";
 
 const useImplementationOneState: UseImplementationOneState = () => {
