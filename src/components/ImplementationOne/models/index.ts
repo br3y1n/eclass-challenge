@@ -1,1 +1,1 @@
-export * from  "./UseImplementationOne.models"
+export * from "./UseImplementationOne.models";

@@ -1,2 +1,2 @@
-export * from "./sizes"
-export * from "./menuItems"
+export * from "./sizes";
+export * from "./menuItems";

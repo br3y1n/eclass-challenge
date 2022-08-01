@@ -12,10 +12,9 @@ describe("ListNicknames tests:", () => {
     );
 
     const li = screen.getAllByRole("listitem");
+    const list = li.map((item) => item.textContent);
 
-    expect(li.at(0)).toHaveTextContent("arango");
-    expect(li.at(1)).toHaveTextContent("brayan");
-    expect(li.at(2)).toHaveTextContent("camilo");
+    expect(list).toEqual(["arango", "brayan", "camilo"]);
   });
 
   it("When it is called with DSC order, then the list is rendered in DSC order", () => {
@@ -28,8 +27,8 @@ describe("ListNicknames tests:", () => {
 
     const li = screen.getAllByRole("listitem");
 
-    expect(li.at(0)).toHaveTextContent("camilo");
-    expect(li.at(1)).toHaveTextContent("brayan");
-    expect(li.at(2)).toHaveTextContent("arango");
+    const list = li.map((item) => item.textContent);
+
+    expect(list).toEqual(["camilo", "brayan", "arango"]);
   });
 });
