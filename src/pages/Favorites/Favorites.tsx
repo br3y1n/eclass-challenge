@@ -1,6 +1,6 @@
+import MediaCards from "../../components/MediaCards/MediaCards";
 import { useSelector } from "react-redux";
 import { selectFavorites } from "../../store/selectors/selectors";
-import MediaCards from "../../components/MediaCards/MediaCards";
 import { Typography } from "@mui/material";
 
 const Favorites = () => {

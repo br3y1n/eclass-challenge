@@ -1,5 +1,5 @@
-import { Character } from "../../models";
 import MediaCard from "../MediaCard/MediaCard";
+import { Character } from "../../models";
 import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { mediaCardsStyles } from "./MediaCards.styles";

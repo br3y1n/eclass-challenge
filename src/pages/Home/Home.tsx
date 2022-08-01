@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
 import RickAndMorty from "../../assets/images/rick-and-morty.png";
+import { Box, Typography } from "@mui/material";
 import { homeStyles } from "./Home.styles";
 
 const Home = () => (

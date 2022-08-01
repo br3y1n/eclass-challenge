@@ -7,24 +7,12 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { charactersStyles } from "../Characters/Characters.styles";
 import { Character } from "../../models";
 import { OmitKeysEnum } from "./enums";
 import { detailsStyles } from "./Details.styles";
-
-const CHARACTER_QUERY = gql`
-  query Character($id: ID!) {
-    character(id: $id) {
-      image
-      name
-      species
-      gender
-      created
-      status
-    }
-  }
-`;
+import { CHARACTER_QUERY } from "./constants";
 
 const Img = styled("img")({});
 

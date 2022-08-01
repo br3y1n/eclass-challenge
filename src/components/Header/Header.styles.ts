@@ -24,7 +24,7 @@ const headerStyles: Styles = {
   },
   menu: {
     height: ({ spacing }) => `calc(${spacing(HEADER_HEIGHT)} - 1px)`,
-    px: 1.5,
+    px: { xs: 1.5, md: 3 },
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

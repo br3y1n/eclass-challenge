@@ -36,7 +36,12 @@ const MediaCard: FC<Character> = (props) => {
   return (
     <Card sx={mediaCardStyles.container}>
       <Box sx={mediaCardStyles.subContainer}>
-        <CardMedia component="img" image={image} alt={name} sx={mediaCardStyles.img} />
+        <CardMedia
+          component="img"
+          image={image}
+          alt={name}
+          sx={mediaCardStyles.img}
+        />
 
         <Box sx={mediaCardStyles.description}>
           <CardContent>

@@ -1,9 +1,13 @@
+import PreviewCode from "../../components/PreviewCode/PreviewCode";
 import { Link, styled, Typography } from "@mui/material";
 import { rulesStyles } from "./Rules.styles";
 import { ApisEnum } from "../../enums";
-import { EVALUATION_CRITERIA, GUIDELINE, STEPS } from "./constants";
-import { CODE_STRING } from "./constants/codeString";
-import PreviewCode from "../../components/PreviewCode/PreviewCode";
+import {
+  CODE_STRING,
+  EVALUATION_CRITERIA,
+  GUIDELINE,
+  STEPS,
+} from "./constants";
 
 const Ul = styled("ul")({});
 const Li = styled("li")({});

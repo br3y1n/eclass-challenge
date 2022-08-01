@@ -3,6 +3,7 @@ import { ChangeEvent, useState } from "react";
 import { Pagination, TextField, Typography } from "@mui/material";
 import { charactersStyles } from "./Characters.styles";
 import MediaCards from "../../components/MediaCards/MediaCards";
+import { useAppState } from "../../hooks/useAppState";
 
 const CHARACTERS_QUERY = gql`
   query Characters($page: Int, $name: String) {
@@ -22,6 +23,7 @@ const CHARACTERS_QUERY = gql`
 const Characters = () => {
   const [page, setPage] = useState(1);
   const [name, setName] = useState("");
+  const { isMobile } = useAppState();
 
   const { data, loading } = useQuery(CHARACTERS_QUERY, {
     variables: { page, name },
@@ -62,6 +64,8 @@ const Characters = () => {
           {cards.length > 0 && (
             <Pagination
               sx={charactersStyles.pagination}
+              size={isMobile ? "small" : undefined}
+              siblingCount={isMobile ? 0 : undefined}
               variant="outlined"
               page={page}
               count={data.characters.info.pages}

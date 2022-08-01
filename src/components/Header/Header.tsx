@@ -1,18 +1,17 @@
 import { FC, useState } from "react";
-import { Box, IconButton, styled, Theme, useMediaQuery } from "@mui/material";
+import { Box, IconButton, styled } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { headerStyles } from "./Header.styles";
 import { getMenuItems } from "../../utils/getMenuItems/getMenuItems";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useAppState } from "../../hooks/useAppState";
 
 const NewLink = styled(Link)({});
 
 const Header: FC = () => {
   const { pathname } = useLocation();
   const [showMenu, setShowMenu] = useState(false);
-  const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  );
+  const { isMobile } = useAppState();
   const items = getMenuItems(isMobile);
 
   const closeMenu = () => {
