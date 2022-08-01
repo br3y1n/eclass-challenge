@@ -3,7 +3,7 @@ import { HEADER_HEIGHT } from "./components/Header/constants";
 import { FOOTER_HEIGHT } from "./components/Footer/constants";
 
 const PADDING_SECTION_SM = 8;
-const PADDING_SECTION_XS = 2;
+const PADDING_SECTION_XS = 4;
 
 const appStyles: Styles = {
   main: {

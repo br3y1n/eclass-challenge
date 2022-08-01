@@ -14,7 +14,13 @@ const implementationTwoStyles: Styles = {
     display: "flex",
     justifyContent: "center",
     fontSize: "20px",
-    my: 2,
+    my: 3,
+    border: "1px solid #b5b5b5",
+    borderRadius: 2,
+    p: 3,
+  },
+  result: {
+    mt: 4,
   },
 };
 

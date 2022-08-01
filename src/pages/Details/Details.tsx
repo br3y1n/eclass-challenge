@@ -26,7 +26,7 @@ const CHARACTER_QUERY = gql`
   }
 `;
 
-const Img = styled("img")();
+const Img = styled("img")({});
 
 const Details = () => {
   const { id } = useParams();

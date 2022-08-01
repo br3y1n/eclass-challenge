@@ -8,7 +8,10 @@ const detailsStyles: Styles = {
   },
   table: {
     backgroundColor: "rgba(0,0,0,0.5)",
-    width: "80%",
+    width: {
+      xs: "100%",
+      sm: "80%",
+    },
     mx: "auto",
   },
   key: {

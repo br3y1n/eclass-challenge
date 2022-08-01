@@ -5,7 +5,7 @@ import { styled } from "@mui/material";
 import { PreviewCodeProps } from "./models";
 import { previewCodeStyles } from "./PreviewCode.styles";
 
-const NewSyntaxHighlighter = styled(SyntaxHighlighter)();
+const NewSyntaxHighlighter = styled(SyntaxHighlighter)({});
 
 const PreviewCode: FC<PreviewCodeProps> = ({ code }) => (
   <NewSyntaxHighlighter

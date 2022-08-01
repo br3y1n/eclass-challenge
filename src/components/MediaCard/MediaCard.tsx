@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -24,7 +25,8 @@ import {
 const MediaCard: FC<Character> = (props) => {
   const { image, name, id } = props;
   const favorites = useSelector(selectFavorites);
-  const isFavorite = !!favorites.find(({ id: currentId }) => id === currentId);
+  const isFavorite =
+    favorites.find(({ id: currentId }) => id === currentId) !== undefined;
   const dispatch = useDispatch();
 
   const toggleFavorite = () => {
@@ -33,27 +35,31 @@ const MediaCard: FC<Character> = (props) => {
 
   return (
     <Card sx={mediaCardStyles.container}>
-      <CardMedia component="img" image={image} alt={name} />
+      <Box sx={mediaCardStyles.subContainer}>
+        <CardMedia component="img" image={image} alt={name} sx={mediaCardStyles.img} />
 
-      <CardContent>
-        <Typography gutterBottom variant="body2" sx={mediaCardStyles.text}>
-          {name}
-        </Typography>
-      </CardContent>
+        <Box sx={mediaCardStyles.description}>
+          <CardContent>
+            <Typography gutterBottom variant="body2" sx={mediaCardStyles.text}>
+              {name}
+            </Typography>
+          </CardContent>
 
-      <CardActions>
-        <IconButton sx={mediaCardStyles.button} onClick={toggleFavorite}>
-          {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-        </IconButton>
+          <CardActions>
+            <IconButton sx={mediaCardStyles.button} onClick={toggleFavorite}>
+              {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+            </IconButton>
 
-        <Button
-          component={Link}
-          to={`${RoutesEnum.DETAILS}/${id}`}
-          sx={mediaCardStyles.button}
-        >
-          See more...
-        </Button>
-      </CardActions>
+            <Button
+              component={Link}
+              to={`${RoutesEnum.DETAILS}/${id}`}
+              sx={mediaCardStyles.button}
+            >
+              See more...
+            </Button>
+          </CardActions>
+        </Box>
+      </Box>
     </Card>
   );
 };

@@ -1,5 +1,5 @@
 import { UseImplementationOneState } from "../models";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { getSumRef } from "../../../utils";
 import { changeStringTargets } from "../../../utils/changeStringTargets/changeStringTargets";
 import { CODE_SUM_STRING } from "../../../pages/Extra/constants";
@@ -15,7 +15,7 @@ const useImplementationOneState: UseImplementationOneState = () => {
     { match: StringTargetsEnum.TARGET_2, newValue: result },
   ]);
 
-  const getResult = (numbers: number[]) => {
+  const getResult = () => {
     const sumRef = getSumRef(numbers);
 
     sumRef((result) => setResult(`${result}`));
@@ -25,8 +25,11 @@ const useImplementationOneState: UseImplementationOneState = () => {
     const valueMapped = value.split(",").map((value) => Number(value.trim()));
     setValue(value);
     setNumbers(valueMapped);
-    getResult(valueMapped);
   };
+
+  useEffect(() => {
+    getResult();
+  }, [numbers]);
 
   return {
     value,

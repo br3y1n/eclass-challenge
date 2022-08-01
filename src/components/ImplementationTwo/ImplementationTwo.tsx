@@ -1,11 +1,12 @@
 import {
-    Box,
-    FormControl,
-    Grid,
-    InputLabel,
-    MenuItem,
-    Select,
-    TextField,
+  Box,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
 } from "@mui/material";
 import PreviewCode from "../PreviewCode/PreviewCode";
 import ListNicknames from "../ListNicknames/ListNicknames";
@@ -79,10 +80,13 @@ const ImplementationTwo: FC = () => {
 
       <PreviewCode code={code} />
 
-        <Box sx={implementationTwoStyles.listContainer}>
-            <ListNicknames names={names} order={order} />
-        </Box>
+      <Typography variant={"body1"} sx={implementationTwoStyles.result}>
+        Result:
+      </Typography>
 
+      <Box sx={implementationTwoStyles.listContainer}>
+        <ListNicknames names={names} order={order} />
+      </Box>
     </>
   );
 };

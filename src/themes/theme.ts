@@ -1,19 +1,59 @@
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#001e3c",
-    },
-    secondary: {
-      main: "#0080ff",
-    },
+const palette = {
+  primary: {
+    main: "#001e3c",
   },
+  secondary: {
+    main: "#0080ff",
+  },
+  text: {
+    primary: "#b5b5b5",
+    white: "#FFFFFF",
+  },
+};
+
+const fonts = {
+  h1: {
+    xs: "35px",
+    sm: "40px",
+  },
+  h2: {
+    xs: "25px",
+    sm: "30px",
+  },
+  h3: {
+    xs: "16px",
+    sm: "20px",
+  },
+  body1: {
+    xs: "16px",
+    sm: "20px",
+  },
+  body2: {
+    xs: "14px",
+    sm: "18px",
+  },
+};
+
+const breakpoints = {
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 900,
+    lg: 1200,
+    xl: 1536,
+  },
+};
+
+const theme = createTheme({
+  palette,
+  breakpoints,
   components: {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#0080ff",
+          color: palette.secondary.main,
         },
       },
     },
@@ -28,20 +68,20 @@ const theme = createTheme({
     MuiSelect: {
       styleOverrides: {
         select: {
-          color: "#b5b5b5",
+          color: palette.text.primary,
         },
         icon: {
-          color: "#b5b5b5",
+          color: palette.text.primary,
         },
       },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          color: "#b5b5b5",
+          color: palette.text.primary,
         },
         notchedOutline: {
-          borderColor: "#b5b5b5 !important",
+          borderColor: `${palette.text.primary} !important`,
         },
       },
     },
@@ -57,7 +97,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-focused": {
-            color: "#b5b5b5",
+            color: palette.text.primary,
           },
         },
       },
@@ -82,33 +122,53 @@ const theme = createTheme({
   typography: {
     fontFamily: "Inter, sans-serif, Arial",
     h1: {
-      fontSize: "40px",
-      color: "#FFFFFF",
+      fontSize: fonts.h1.sm,
+      color: palette.text.white,
       textAlign: "center",
       padding: "16px",
       paddingTop: "0px",
+
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: fonts.h1.xs,
+      },
     },
     h2: {
-      fontSize: "30px",
-      color: "#FFFFFF",
+      fontSize: fonts.h2.sm,
+      color: palette.text.white,
       paddingBottom: "16px",
+
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: fonts.h2.xs,
+      },
     },
     h3: {
-      fontSize: "20px",
-      color: "#FFFFFF",
+      fontSize: fonts.h3.sm,
+      color: palette.text.white,
       paddingBottom: "16px",
+
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: fonts.h3.xs,
+      },
     },
     body1: {
-      color: "#b5b5b5",
-      fontSize: "20px",
+      color: palette.text.primary,
+      fontSize: fonts.body1.sm,
       textAlign: "justify",
+
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: fonts.body1.xs,
+      },
     },
     body2: {
-      color: "#b5b5b5",
-      fontSize: "18px",
+      color: palette.text.primary,
+      fontSize: fonts.body2.sm,
       textAlign: "justify",
+
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: fonts.body2.xs,
+      },
     },
   },
 });
 
-export { theme };
+export { theme, fonts };

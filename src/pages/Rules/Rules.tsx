@@ -5,8 +5,8 @@ import { EVALUATION_CRITERIA, GUIDELINE, STEPS } from "./constants";
 import { CODE_STRING } from "./constants/codeString";
 import PreviewCode from "../../components/PreviewCode/PreviewCode";
 
-const Ul = styled("ul")();
-const Li = styled("li")();
+const Ul = styled("ul")({});
+const Li = styled("li")({});
 
 const Rules = () => (
   <>
@@ -34,7 +34,9 @@ const Rules = () => (
       ))}
     </Ul>
 
-    <Typography variant="h2" sx={rulesStyles.h2}>Bonus exercise</Typography>
+    <Typography variant="h2" sx={rulesStyles.h2}>
+      Bonus exercise
+    </Typography>
 
     <Typography variant="body1" sx={rulesStyles.description}>
       We also need you to solve these little exercises, it shouldn't take more
@@ -69,7 +71,9 @@ const Rules = () => (
 
     <PreviewCode code={CODE_STRING} />
 
-    <Typography variant="h2" sx={rulesStyles.h2}>The guideline</Typography>
+    <Typography variant="h2" sx={rulesStyles.h2}>
+      The guideline
+    </Typography>
 
     <Ul sx={rulesStyles.ul}>
       {GUIDELINE.map((text, index) => (
@@ -79,7 +83,9 @@ const Rules = () => (
       ))}
     </Ul>
 
-    <Typography variant="h2" sx={rulesStyles.h2}>The evaluation criteria will be</Typography>
+    <Typography variant="h2" sx={rulesStyles.h2}>
+      The evaluation criteria will be
+    </Typography>
 
     <Ul sx={rulesStyles.ul}>
       {EVALUATION_CRITERIA.map((text, index) => (

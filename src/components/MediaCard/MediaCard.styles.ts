@@ -3,11 +3,17 @@ import { Styles } from "../../models";
 const mediaCardStyles: Styles = {
   button: {
     color: "secondary.dark",
-    fontSize: "14px",
+    fontSize: {
+      xs: "12px",
+      sm: "14px",
+    },
     p: 0,
 
-    "&:first-of-type": {
-      mr: 3,
+    "&:first-child": {
+      mr: {
+        xs: 1.5,
+        sm: 3,
+      },
     },
   },
   text: {
@@ -17,9 +23,36 @@ const mediaCardStyles: Styles = {
   },
   container: {
     display: "inline-block",
-    maxWidth: ({ spacing }) => spacing(22),
-    m: 2,
+    width: "100%",
+    maxWidth: ({ spacing }) => ({
+      xs: spacing(40),
+      sm: spacing(22),
+    }),
+    my: {
+      xs: 1,
+      sm: 2,
+    },
+    mx: {
+      xs: 0,
+      sm: 2,
+    },
     bgcolor: "#000000",
+  },
+  subContainer: {
+    display: "flex",
+    flexDirection: {
+      xs: "row",
+      sm: "column",
+    },
+  },
+  img: {
+    width: ({ spacing }) => ({
+      xs: spacing(12),
+      sm: "100%",
+    }),
+  },
+  description: {
+    overflow: "hidden",
   },
 };
 
